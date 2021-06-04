@@ -1,3 +1,8 @@
+# French multiple negation production prosody experiment
+# Figures
+# (C) Jeremy D Yeaton
+# January 2019
+
 ## Load packages ####
 library(tidyverse)
 library(ggpubr)

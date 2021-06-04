@@ -1,3 +1,8 @@
+# French multiple negation production prosody experiment
+# Import and preprocessing
+# (C) Jeremy D Yeaton
+# January 2019
+
 library(tidyverse)
 
 ## READ IN DATA ####
