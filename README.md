@@ -21,8 +21,8 @@ It expects the scripts to be in a "scripts" directory, as well as data in a "dat
 ## Scripts
 This repository contains 3 R scripts in the "scripts" directory:
 - **A_Preprocessing.R** Imports the data files, tidies them up, and returns three dataframes: _behavior.df_, _f0.df_, and _syll_vals.df_ for which the columns are laid ou in the **Codebook** section below.
-- **B_Statistics.R**
-- **C_Figures.R** 
+- **B_Statistics.R** Contains code to calculate the GAMMs as well as the LMERs presented in the paper
+- **C_Figures.R** Code to produce results figures in the paper
 
 ## Codebook
 ### Columns -- _behavior.df_ dataframe
