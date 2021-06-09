@@ -18,7 +18,9 @@ source('scripts/A_Preprocessing.R')
 
 ## GAMM: Window 1 (first 6 syllables) ####
 window1.gam <- f0.df %>%
+  # Select first 6 syllables
   filter(normTime < 60) %>%
+  # Select critical conditions
   filter(condition %in% c('nc','dn')) %>%
   mutate(syll_num = as.factor(syll_num),
          condition = factor(condition, levels = c('nc','dn'))) %>%

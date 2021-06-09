@@ -16,13 +16,16 @@ behavior_raw <- read.table('data/behavior.csv', sep = '\t', header = TRUE)
 f0.df <- f0_over_time %>%
   merge(line_max_min, all.x = TRUE) %>%
   group_by(subj) %>%
+  # Get mean and SD by subject
   summarize(meanf0_sub = mean(raw_f0),
             sdf0_sub = sd(raw_f0)) %>%
   merge(f0_over_time, all = TRUE) %>%
   merge(line_max_min, all = TRUE) %>%
   merge(read_csv('data/serAll.csv',col_types = cols()),col_types = cols()) %>%
+  # Take z-scores of F0
   mutate(f0_Z = (raw_f0-meanf0_sub)/sdf0_sub,
          normTime = as.numeric(series)) %>%
+  # Filter outliers more than 3 SD away from mean
   filter(abs(f0_Z) < 3) %>%
   mutate(condition = factor(condition,levels = c('nc','dn','negsub','negob')),
          subj = as.factor(subj),
@@ -33,6 +36,7 @@ f0.df <- f0_over_time %>%
 
 syll_vals.df <- f0.df %>%
   group_by(subj,syll_num) %>%
+  # Get mean and SD by subject AND syllable
   summarize(syll_f0 = mean(raw_f0),
             syll_sd = sd(raw_f0)) %>%
   merge(line_max_min %>%
@@ -41,7 +45,9 @@ syll_vals.df <- f0.df %>%
                  sdDur_sub = sd(duration, na.rm = TRUE)) %>%
           merge(line_max_min) %>%
           merge(read_csv('data/serAll.csv',col_types = cols())) %>%
+          # Z-score duration values
           mutate(dur_z = (duration-meanDur_sub)/sdDur_sub)) %>%
+  # Take z-scores
   mutate(maxf0_z = (max_f0-syll_f0)/syll_sd,
          minf0_z = (min_f0-syll_f0)/syll_sd)
 

@@ -42,7 +42,7 @@ behCond.plot <- behavior.df %>%
   scale_x_discrete(labels = c('DN','NC','Control'))
 behCond.plot
 behCond.plot %>%
-  ggsave(plot=.,"figures/Figure_3.jpeg",width=plot.w/2,height=plot.h,units="cm")
+  ggsave(plot=.,"figures/Figure_3.tiff",width=plot.w/2,height=plot.h,units="cm")
 
 # Figure S1: Behavior by interpretation
 behInterp.tbl <- behavior.df %>%
@@ -79,7 +79,7 @@ behPlots <- ggarrange(behCond.plot,behInterp.plot,
                       ncol = 2, nrow = 1)
 behPlots
 behPlots %>%
-  ggsave(plot=.,"figures/Figure_S1.jpeg",width=plot.w,height=plot.h,units="cm")
+  ggsave(plot=.,"figures/Figure_S1.tiff",width=plot.w,height=plot.h,units="cm")
 
 
 ## Figure 5: Prosodic contours in critical conditions ####
@@ -105,7 +105,7 @@ critContours.plot <- ggplot() +
   annotate(geom="text", x=55, y=annY, label="PP1",color="black")
 critContours.plot
 critContours.plot %>%
-  ggsave(plot=.,"figures/Figure_5.jpeg",width=plot.w,height=plot.h,units="cm")
+  ggsave(plot=.,"figures/Figure_5.tiff",width=plot.w,height=plot.h,units="cm")
 
 ## Figure 7: Prosodic contour for last 2 syllables ####
 
@@ -128,7 +128,7 @@ last2.plot <- last2.df %>%
   annotate(geom="text", x=-5, y=150, label="ultimate",color="black")
 last2.plot
 last2.plot %>%
-  ggsave(plot=.,'figures/Figure_7.jpeg',width=.5*plot.w,height=plot.h,units="cm")
+  ggsave(plot=.,'figures/Figure_7.tiff',width=.5*plot.w,height=plot.h,units="cm")
 
 ## Figure 8: Duration boxplot ####
 durNCI.plot <- syll_vals.df %>%
@@ -147,7 +147,7 @@ durNCI.plot <- syll_vals.df %>%
   theme(legend.position = "top")
 durNCI.plot
 durNCI.plot %>%
-  ggsave(plot=.,'figures/Figure_8.jpeg',width=plot.w/2,height=plot.h,units="cm")
+  ggsave(plot=.,'figures/Figure_8.tiff',width=plot.w/2,height=plot.h,units="cm")
 
 ## Figure 9: Contours by condition on NCIs ####
 
@@ -222,4 +222,4 @@ compContours <- ggarrange(subNO.plot,subNS.plot,objNO.plot,objNS.plot,
           ncol = 2, nrow = 2)
 compContours
 compContours %>%
-  ggsave(plot=.,'figures/Figure_9.jpeg',width=1.5*plot.w,height=1.5*plot.h,units="cm")
+  ggsave(plot=.,'figures/Figure_9.tiff',width=1.5*plot.w,height=1.5*plot.h,units="cm")
