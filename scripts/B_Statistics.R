@@ -1,14 +1,13 @@
 # French multiple negation production prosody experiment
 # Statistics
 # (C) Jeremy D Yeaton
-# January 2019
+# January 2019; updated August 2021
 
 ## Load packages ####
 library(tidyverse)
 library(mgcv)
 library(lme4)
 library(lmerTest)
-library(modelr)
 
 ## Read in data ####
 source('scripts/A_Preprocessing.R')
@@ -29,7 +28,8 @@ window1.gam <- f0.df %>%
          s(subj,bs='re') + s(trial,bs='re'),data=.,method = 'REML')
 summary(window1.gam$gam)
 
-gam.check(window1.gam$gam)
+# Reshape to list and adjust p-values
+as.list(p.adjust(summary(window1.gam$gam)$p.pv,method='BY'))
 
 ## GAMM: Window 2 (last 2 syllables) ####
 wind2.df <- f0.df %>%
@@ -55,26 +55,43 @@ summary(window2.gam$gam)
 ## LMER: Duration ####
 duration.lmer <- syll_vals.df %>%
   filter(syll_num < 7) %>%
-  filter(abs(dur_Z) < 3) %>%
+  filter(abs(dur_z) < 3) %>%
   # Change order of levels to run test with different baseline conditions
   mutate(condition = factor(condition, levels = c('nc','dn','negsub','negob')),
+  # mutate(condition = factor(condition, levels = c('dn','nc','negsub','negob')),
+  # mutate(condition = factor(condition, levels = c('negsub','nc','dn','negob')),
+  # mutate(condition = factor(condition, levels = c('negob','nc','dn','negsub')),
          syll_num = as.character(syll_num)) %>%
-  lmer(dur_z ~ syll_num + condition : syll_num + (1|subj) + (1|trial),data=.)
+  lmer(dur_z ~ syll_num + condition : syll_num + 
+         (1|subj) * (1|trial),
+       data=.,control = lmerControl(optimizer = 'bobyqa',optCtrl = list(maxfun = 10000)))
 summary(duration.lmer)
+
+# Reshape to dataframe and adjust p-values
+dur.lmer.coef <- as.data.frame(summary(duration.lmer)$coefficients) %>%
+  mutate(p_adj = p.adjust(.$`Pr(>|t|)`,method='BY'))
 
 ## LMER: Max F0 ####
 maxz.lmer <- syll_vals.df %>%
   filter(syll_num < 7, abs(maxf0_z) < 3) %>%
-  mutate(condition = factor(condition, levels = c('nc','dn','negob','negsub')),
+  # Change order of levels to run test with different baseline conditions
+  mutate(condition = factor(condition, levels = c('nc','dn','negsub','negob')),
+  # mutate(condition = factor(condition, levels = c('dn','nc','negsub','negob')),
+  # mutate(condition = factor(condition, levels = c('negsub','nc','dn','negob')),
+  # mutate(condition = factor(condition, levels = c('negob','nc','dn','negsub')),
          syll_num = as.character(syll_num)) %>%
-  lmer(maxf0_z ~ syll_num + condition : syll_num + (1|subj) + (1|trial),data=.,REML=TRUE)
+  lmer(maxf0_z ~ syll_num + condition : syll_num + (1|subj) * (1|trial),data=.,REML=TRUE)
 summary(maxz.lmer)
 
+# Reshape to dataframe and adjust p-values
+maxz.lmer.coef <- as.data.frame(summary(maxz.lmer)$coefficients) %>%
+  mutate(p_adj = p.adjust(.$`Pr(>|t|)`,method='BY'))
+
 ## LMER: Min F0 ####
-minz.lmer <- dur.df %>%
+minz.lmer <- syll_vals.df %>%
   filter(syll_num < 7,abs(minf0_z) < 3) %>%
   mutate(condition = factor(condition, levels = c('nc','dn','negob','negsub')),
          syll_num = as.character(syll_num)) %>%
-  lmer(minf0_z ~ syll_num + condition : syll_num + (1|subj) + (1|trial),data=.,REML=TRUE)
+  lmer(minf0_z ~ syll_num + condition : syll_num + (1|subj) * (1|trial),data=.,REML=TRUE)
 summary(minz.lmer)
 

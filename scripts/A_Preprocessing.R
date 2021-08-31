@@ -30,7 +30,7 @@ f0.df <- f0_over_time %>%
   mutate(condition = factor(condition,levels = c('nc','dn','negsub','negob')),
          subj = as.factor(subj),
          trial = as.factor(trial)) %>%
-  select(-c(max_f0,min_f0,duration,series))
+  select(-c(max_f0,min_f0,duration,series,meanf0_sub,sdf0_sub))
 
 ## Duration & max/min data ####
 
@@ -49,7 +49,8 @@ syll_vals.df <- f0.df %>%
           mutate(dur_z = (duration-meanDur_sub)/sdDur_sub)) %>%
   # Take z-scores
   mutate(maxf0_z = (max_f0-syll_f0)/syll_sd,
-         minf0_z = (min_f0-syll_f0)/syll_sd)
+         minf0_z = (min_f0-syll_f0)/syll_sd) %>%
+  select(-c(series,syll_f0,syll_sd,meanDur_sub,sdDur_sub))
 
 
 ## Behavioral data ####
