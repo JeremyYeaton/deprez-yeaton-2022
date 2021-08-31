@@ -13,7 +13,6 @@ The analysis pipeline presented in the paper relies on the following R packages 
 - mgcv
 - lme4
 - lmerTest
-- modelr
 - ggpubr
 
 It expects the scripts to be in a "scripts" directory, as well as data in a "data" directory. The figures script will expect a "figures" directory to save them in.
@@ -26,7 +25,41 @@ This repository contains 3 R scripts in the "scripts" directory:
 
 ## Codebook
 ### Columns -- _behavior.df_ dataframe
+- subject: participant identifier
+- item: stimulus item
+- response: participant response to T/F verification statement (V for true, F for false)
+- rt: response time (sentences had different lengths so this isn't especially meaningful)
+- category: experimental condition
+- condition: DN, NC, or Control for single negative controls & fillers 
+- truthVal: correct answer to verification statement
+- check: does response match truthVal? TRUE for correct answer, FALSE for incorrect
+- prsntOrd: order in which the item was presented in the experiment to that participant
+- check_mm: only for DN and NC conditions. If "check" is TRUE, then check_mm is the same as condition. If "check" is FALSE, then it is a condition mismatch, and ultimately the opposite interpretation.
+- cond_old: short version of category
 
 ### Columns -- _f0.df_ dataframe
+- subj: participant identifier (same as "subject" above)
+- obj_id: 
+- trial: 
+- syll: 
+- condition: 
+- unique: 
+- raw_f0: 
+- dmeaned_f0: 
+- syll_num: 
+- f0_Z: 
+- normTime: 
 
 ### Columns -- _syll_vals.df dataframe
+- subj: 
+- syll_num: 
+- unique: 
+- obj_id: 
+- trial: 
+- syll: 
+- max_f0: 
+- duration: 
+- condition: 
+- dur_z: 
+- maxf0_z: 
+- minf0_z: 
