@@ -2,10 +2,12 @@
 This repository contains the data processing and analysis scripts for:
 Déprez, V. & Yeaton, J.D. (2021). _On the prosody of French ambiguous multiple negative sentences._ [[manuscript]](https://jeremyyeaton.github.io/papers/Deprez_Yeaton-2021-manuscript-ProsodyNegation_revised.pdf)
 
-Any questions regarding the data or analysis can be directed to the second author at: jyeaton@uci.edu
+Any questions regarding the data or analysis can be directed to: jyeaton@uci.edu
 
 ## Data
 To comply with GDPR, the raw data are hosted on OSF: https://osf.io/u35mq/
+All "raw" (i.e.: not z-transformed) F0 values are in Hz.
+This OSF repository also stores a R environment file which contains all of the models and figures.
 
 ## Analysis setup
 The analysis pipeline presented in the paper relies on the following R packages (available from CRAN):
@@ -39,27 +41,27 @@ This repository contains 3 R scripts in the "scripts" directory:
 
 ### Columns -- _f0.df_ dataframe
 - subj: participant identifier (same as "subject" above)
-- obj_id: 
-- trial: 
-- syll: 
-- condition: 
-- unique: 
-- raw_f0: 
-- dmeaned_f0: 
-- syll_num: 
-- f0_Z: 
-- normTime: 
+- obj_id: concatenation of participant number and item number
+- trial: item number (same as "item" above)
+- syll: text corresponding to that syllable in Praat phonetic format
+- condition: DN, NC, NegOb, or NegSub
+- unique: concatenation of obj_id and normTime
+- raw_f0: F0 value output by ProsodyPro for that sample
+- demeaned_f0: raw F0 minus the mean F0 for that participant in all syllables in the same position
+- syll_num: syllable number in the utterance
+- f0_Z: demeaned_f0 divided by the standard deviation for that participant within the same syllable position across all utterances
+- normTime: 10 time-normalized values per syllable using pythonic numbering (0-9 is the first syllable, 10-19 is the second, etc.)
 
 ### Columns -- _syll_vals.df dataframe
-- subj: 
-- syll_num: 
-- unique: 
-- obj_id: 
-- trial: 
-- syll: 
-- max_f0: 
-- duration: 
-- condition: 
-- dur_z: 
-- maxf0_z: 
-- minf0_z: 
+- subj: same as above
+- syll_num: same as above
+- unique: same as above
+- obj_id: same as above
+- trial: same as above
+- syll: same as above
+- max_f0: raw maximum F0 output by ProsodyPro for that syllable
+- duration: syllable duration (in ms)
+- condition: same as above
+- dur_z: z-scored duration
+- maxf0_z: z-scored max F0 using mean and SD from time-normalized data
+- minf0_z: z-scored min F0 using mean and SD from time-normalized data
