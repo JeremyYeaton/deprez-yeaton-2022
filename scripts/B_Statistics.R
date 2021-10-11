@@ -95,3 +95,32 @@ minz.lmer <- syll_vals.df %>%
   lmer(minf0_z ~ syll_num + condition : syll_num + (1|subj) * (1|trial),data=.,REML=TRUE)
 summary(minz.lmer)
 
+
+# Timing of peak --------------------------------------------------------
+
+# On second syllable of subject (DN & NC only)
+sonne.df <- f0.df %>%
+  filter(condition %in% c('nc','dn'),syll_num == 2) %>%
+  merge(f0.df %>%
+          filter(condition %in% c('nc','dn'),syll_num == 2) %>%
+          group_by(subj,condition,trial) %>%
+          summarize(peak = max(raw_f0),.groups='keep')) %>%
+  filter(peak == raw_f0)
+
+sonne.peak.lmer <- sonne.df %>%
+  lmer(normTime ~ condition + (1|trial) * (1|subj),data=.,REML=TRUE)
+summary(sonne.peak.lmer)
+
+# On the object
+rien.df <-f0.df %>%
+  filter(condition %in% c('nc','dn','negob','negsub'),syll_num == 5) %>%
+  merge(f0.df %>%
+          filter(condition %in% c('dn','nc','negob','negsub'),syll_num == 5) %>%
+          group_by(subj,condition,trial) %>%
+          summarize(peak = max(raw_f0),.groups='keep')) %>%
+  filter(peak == raw_f0)
+
+rien.peak.lmer <- rien.df %>%
+  mutate(condition = factor(condition, levels=c('dn','nc','negob','negsub'))) %>%
+  lmer(normTime ~ condition + (1|trial) * (1|subj),data=.,REML=TRUE)
+summary(rien.peak.lmer)

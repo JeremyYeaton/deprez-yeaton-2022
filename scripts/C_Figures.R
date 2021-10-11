@@ -109,7 +109,6 @@ critContours.plot %>%
 
 ## Figure 7: Prosodic contour for last 2 syllables ####
 
-## Supplemental figure XX: Contour of last 2 syllables ####
 last2.df <- f0.df %>%
   merge(f0.df %>%
           group_by(trial) %>%
@@ -223,3 +222,11 @@ compContours <- ggarrange(subNO.plot,subNS.plot,objNO.plot,objNS.plot,
 compContours
 compContours %>%
   ggsave(plot=.,'figures/Figure_9.tiff',width=1.5*plot.w,height=1.5*plot.h,units="cm")
+
+## Supplementary figure S4: Illustration of peak timing in critical conditions ####
+# x-intercept values output by sonne.peak.lmer and rien.peak.lmer
+critContours.plot +
+  geom_vline(xintercept=14.2768,color=nc_color,size=1) +
+  geom_vline(xintercept=14.6182,color=dn_color,size=1) +
+  geom_vline(xintercept=46.4805,color=nc_color,size=1) +
+  geom_vline(xintercept=47.3125,color=dn_color,size=1)
