@@ -1,0 +1,41 @@
+Type	CSS	Crit	Question	Answer	Verb	ID		
+Critical1 NC	"Dans cet hôtel, les clients ne sont pas contents du service :"	personne n'aime rien ici.	Tout le monde aime quelque chose ici. 	F	aimer	1		
+Critical1 NC	Dans notre famille on est tous allergique à l'alcool : 	personne ne boit rien dans les soirées.	Ils ne boivent pas d'alcool.	V	boire	2		
+Critical1 NC	Tous les profs s'ennuient en conseil de classe : 	personne ne dit rien pendant les réunions.	Ils restent tous silencieux.	V	dire	3		
+Critical1 NC	Il fait vraiment trop chaud aujourd'hui :  	personne ne fait rien dehors. 	Ils ont tous trop chaud pour faire quelque chose.	V	faire	4		
+Critical1 NC	Les profs se plaignent tous que les élèves n'étudient pas pendant les vacances : 	personne ne lit rien en été.	Les élèves lisent tous quelque chose.	F	lire	5	`	
+Critical1 NC	"Depuis toujours, cette cantine est absolument infecte : "	personne ne mange rien ici.	Les gens ne mangent pas ici.	V	manger	6		
+Critical1 NC	"Dans ce pays, la monnaie n'a plus aucune valeur : "	personne ne met rien à la banque.	Les gens placent leur argent à la banque.	F	mettre	7		
+Critical1 NC	On vient de couper l'électricité et il fait tout noir ici : 	personne ne voit rien dans la pièce.	Ils voient tous quelque chose.	F	voir	8		
+Critical2 DN	Dans ce restaurant on trouve toujours quelque chose de bon : 	personne n'aime rien dans les plats proposés.	Ils  aiment tous quelque chose.	V	aimer	9		
+Critical2 DN	"Chez les jeunes, la consommation d'alcool est effrayante :  "	personne ne boit rien dans les soirées.	Ils ne boivent pas d'alcool.	F	boire	10		
+Critical2 DN	"Chez nous, les profs veulent tous donner leur avis : "	personne ne dit rien pendant les réunions.	Ils disent tous quelque chose.	V	dire	11		
+Critical2 DN	"A l'approche des dates butoir, tout le monde travaille dur pour finir à temps :"	personne ne fait rien ces jours-là.	Ils ne font pas de travail.	F	faire	12		
+Critical2 DN	"Dans cette école exceptionnelle, absolument tous les élèves font leurs devoirs : "	personne ne lit rien pour sa classe.	Les élèves lisent tous quelque chose.	V	lire	13		
+Critical2 DN	"Même quand on fait un régime, il faut se nourrir : "	personne ne mange rien pendant un mois.	Ils ne mangent pas pendant un mois.	F	manger	14		
+Critical2 DN	La plupart des gens amassent un tas de bricoles inutiles :	personne ne met rien dans son placard.	Les gens laissent les placards vides.	F	mettre	15		
+Critical2 DN	Les études cognitives nous montrent que même les aveugles ont une vision inconsciente : 	personne ne voit rien du tout.	Tout le monde voit quelque chose.	V	voir	16		
+Critical3 NegOb	La rupture avec son copain l'a complètement déprimée : 	Noëlle n'aime rien en ce moment.	Noelle déteste tout. 	V	aimer	17	`	
+Critical3 NegOb	"Quand on sort, il faut un chauffeur sobre : "	Raoul ne boit rien aujourd'hui.	Il ne boit pas  d'alcool.	V	boire	18		
+Critical3 NegOb	"Parce qu'elle est très timide, "	Aline ne dit rien pendant les cours.	Elle dit toujours quelque chose.	F	dire	19		
+Critical3 NegOb	"Comme elle est très religieuse, "	Marla ne fait rien le dimanche.	Marla fait toujours quelque chose le dimanche.	F	faire	20		
+Critical3 NegOb	"Comme elle travaille comme relectrice toute la semaine, "	Marie ne lit rien le week-end.	Marie lit quelque chose le week-end. 	F	lire	21		
+Critical3 NegOb	"Pour bien digerer, "	les gens ne mangent rien le soir.	Les gens ne mangent pas le soir.	V	manger	22		
+Critical3 NegOb	"Comme il est très dépensier, "	Julien ne met rien de coté pour l'avenir.	Julien n'économise pas son argent.	V	mettre	23		
+Critical3 NegOb	Elle est très intelligente mais elle a la tête dans les nuages : 	Lucie ne voit rien autour d'elle.	Lucie est très observatrice.	F	voir	24		
+Critical4 NegSub	"Quand on s'amuse, on a pas toujours envie de rester sobre : "	personne n'aime l'eau dans les fêtes.	Ils aiment tous l'alcool.	V	aimer	25		
+Critical4 NegSub	"Dans ce bar, il y a de l'ambiance et on consomme beaucoup d'alcool : "	personne ne boit d'eau ici.	Ils boivent tous de l'eau.	F	boire	26		
+Critical4 NegSub	Tout le monde fait très attention pendant ce cours : 	personne ne dit mot pendant une heure.	Les étudiants restent silencieux.	V	dire	27		
+Critical4 NegSub	"Beaucoup de gens se lèvent très tôt pendant la semaine, "	personne ne fait ça le dimanche.	Ces gens font tous la grasse matinée le dimanche.	V	faire	28		
+Critical4 NegSub	Tous les meubles d'Ikea viennent avec des notices de montage : 	personne ne lit ça en général.	Les gens ne lisent pas les notices.	V	lire	29		
+Critical4 NegSub	Les oeufs sont difficiles à digérer. On en mange plutôt le matin ou le midi : 	personne ne mange ça le soir. 	Tout le monde mange des oeufs le soir.	F	manger	30		
+Critical4 NegSub	Les mini-jupes sont super à la mode : 	mais personne ne met ça à l'église.	Les femmes mettent toutes des mini jupes à l'eglise.	F	mettre	31		
+Critical4 NegSub	"Dans la brousse, les gens se promènent tout nu : "	personne ne voit ça ici.	On voit tous ça ici.	F	voir	32		
+Control	Il y a un match de foot cet après-midi :	tout le monde va au stade.	Les gens restent tous à la maison.	F	NA	33		
+Control	La leçon d'aujourd'hui n'était pas trop claire :	chaque élève avait des questions de clarification.	Les eleves n'ont pas compris la leçon.	V	NA	34		
+Control	Son ordi est cassé :	Alain va en acheter un nouveau.	Alain ne veut plus d'ordinateur.	F	NA	35		
+Control	Il fait vraiment très beau aujourd'hui :	tout le monde est dehors.	Les gens restent tous à l'intérieur.	F	NA	36		
+Control	"Demain, c'est un long week-end :"	tout le monde part à la campagne.	Les gens profitent de la nature.	V	NA	37		
+Control	Le printemps est arrivé :	tous les arbres sont en fleurs.	Il n'y a que des feuilles sur les arbres.	F	NA	38		
+Control	Aujourd'hui les gens ne se parlent plus face à face :	tout le monde utilise son téléphone portable.	Les gens n'ont pas de contact direct.	V	NA	39		
+Control	C'est une habitude chez nous après le diner : 	tout le monde regarde la télévision.	Les gens regardent la télévision le soir.	V	NA	40		

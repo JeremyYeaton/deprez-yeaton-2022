@@ -1,0 +1,41 @@
+Type	CSS	Crit	Question	Answer	Verb	ID	
+Critical1 NC	Il y a un match de foot cet après-midi :	tout le monde va au stade.	Les gens restent tous à la maison.	F	NA	1	
+Critical1 NC	La leçon d'aujourd'hui n'était pas trop claire :	chaque élève avait des questions de clarification.	Les eleves n'ont pas compris la leçon.	V	NA	2	
+Critical1 NC	Son ordi est cassé :	Alain va en acheter un nouveau.	Alain ne veut plus d'ordinateur.	F	NA	3	
+Critical1 NC	Il fait vraiment très beau aujourd'hui :	tout le monde est dehors.	Les gens restent tous à l'intérieur.	F	NA	4	
+Critical1 NC	"Demain, c'est un long week-end :"	tout le monde part à la campagne.	Les gens profitent de la nature.	V	NA	5	`
+Critical1 NC	Le printemps est arrivé :	tous les arbres sont en fleurs.	Il n'y a que des feuilles sur les arbres.	F	NA	6	
+Critical1 NC	Aujourd'hui les gens ne se parlent plus face à face :	tout le monde utilise son téléphone portable.	Les gens n'ont pas de contact direct.	V	NA	7	
+Critical1 NC	C'est une habitude chez nous après le diner : 	tout le monde regarde la télévision.	Les gens regardent la télévision le soir.	V	NA	8	
+Critical2 DN	Il y a un match de foot cet après-midi :	tout le monde va au stade.	Les gens restent tous à la maison.	F	NA	9	
+Critical2 DN	La leçon d'aujourd'hui n'était pas trop claire :	chaque élève avait des questions de clarification.	Les eleves n'ont pas compris la leçon.	V	NA	10	
+Critical2 DN	Son ordi est cassé :	Alain va en acheter un nouveau.	Alain ne veut plus d'ordinateur.	F	NA	11	
+Critical2 DN	Il fait vraiment très beau aujourd'hui :	tout le monde est dehors.	Les gens restent tous à l'intérieur.	F	NA	12	
+Critical2 DN	"Demain, c'est un long week-end :"	tout le monde part à la campagne.	Les gens profitent de la nature.	V	NA	13	
+Critical2 DN	Le printemps est arrivé :	tous les arbres sont en fleurs.	Il n'y a que des feuilles sur les arbres.	F	NA	14	
+Critical2 DN	Aujourd'hui les gens ne se parlent plus face à face :	tout le monde utilise son téléphone portable.	Les gens n'ont pas de contact direct.	V	NA	15	
+Critical2 DN	C'est une habitude chez nous après le diner : 	tout le monde regarde la télévision.	Les gens regardent la télévision le soir.	V	NA	16	
+Critical3 NegOb	Il y a un match de foot cet après-midi :	tout le monde va au stade.	Les gens restent tous à la maison.	F	NA	17	`
+Critical3 NegOb	La leçon d'aujourd'hui n'était pas trop claire :	chaque élève avait des questions de clarification.	Les eleves n'ont pas compris la leçon.	V	NA	18	
+Critical3 NegOb	Son ordi est cassé :	Alain va en acheter un nouveau.	Alain ne veut plus d'ordinateur.	F	NA	19	
+Critical3 NegOb	Il fait vraiment très beau aujourd'hui :	tout le monde est dehors.	Les gens restent tous à l'intérieur.	F	NA	20	
+Critical3 NegOb	"Demain, c'est un long week-end :"	tout le monde part à la campagne.	Les gens profitent de la nature.	V	NA	21	
+Critical3 NegOb	Le printemps est arrivé :	tous les arbres sont en fleurs.	Il n'y a que des feuilles sur les arbres.	F	NA	22	
+Critical3 NegOb	Aujourd'hui les gens ne se parlent plus face à face :	tout le monde utilise son téléphone portable.	Les gens n'ont pas de contact direct.	V	NA	23	
+Critical3 NegOb	C'est une habitude chez nous après le diner : 	tout le monde regarde la télévision.	Les gens regardent la télévision le soir.	V	NA	24	
+Critical4 NegSub	Il y a un match de foot cet après-midi :	tout le monde va au stade.	Les gens restent tous à la maison.	F	NA	25	
+Critical4 NegSub	La leçon d'aujourd'hui n'était pas trop claire :	chaque élève avait des questions de clarification.	Les eleves n'ont pas compris la leçon.	V	NA	26	
+Critical4 NegSub	Son ordi est cassé :	Alain va en acheter un nouveau.	Alain ne veut plus d'ordinateur.	F	NA	27	
+Critical4 NegSub	Il fait vraiment très beau aujourd'hui :	tout le monde est dehors.	Les gens restent tous à l'intérieur.	F	NA	28	
+Critical4 NegSub	"Demain, c'est un long week-end :"	tout le monde part à la campagne.	Les gens profitent de la nature.	V	NA	29	
+Critical4 NegSub	Le printemps est arrivé :	tous les arbres sont en fleurs.	Il n'y a que des feuilles sur les arbres.	F	NA	30	
+Critical4 NegSub	Aujourd'hui les gens ne se parlent plus face à face :	tout le monde utilise son téléphone portable.	Les gens n'ont pas de contact direct.	V	NA	31	
+Critical4 NegSub	C'est une habitude chez nous après le diner : 	tout le monde regarde la télévision.	Les gens regardent la télévision le soir.	V	NA	32	
+Control	Il y a un match de foot cet après-midi :	tout le monde va au stade.	Les gens restent tous à la maison.	F	NA	33	
+Control	La leçon d'aujourd'hui n'était pas trop claire :	chaque élève avait des questions de clarification.	Les eleves n'ont pas compris la leçon.	V	NA	34	
+Control	Son ordi est cassé :	Alain va en acheter un nouveau.	Alain ne veut plus d'ordinateur.	F	NA	35	
+Control	Il fait vraiment très beau aujourd'hui :	tout le monde est dehors.	Les gens restent tous à l'intérieur.	F	NA	36	
+Control	"Demain, c'est un long week-end :"	tout le monde part à la campagne.	Les gens profitent de la nature.	V	NA	37	
+Control	Le printemps est arrivé :	tous les arbres sont en fleurs.	Il n'y a que des feuilles sur les arbres.	F	NA	38	
+Control	Aujourd'hui les gens ne se parlent plus face à face :	tout le monde utilise son téléphone portable.	Les gens n'ont pas de contact direct.	V	NA	39	
+Control	C'est une habitude chez nous après le diner : 	tout le monde regarde la télévision.	Les gens regardent la télévision le soir.	V	NA	40	
