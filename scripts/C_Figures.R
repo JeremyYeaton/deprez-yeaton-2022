@@ -26,7 +26,7 @@ control_color <- '#7f7f7f'
 
 ## Behavioral results ####
 
-# Figure 3: Behavior by condition
+## Figure 3: Behavior by condition ####
 behCond.plot <- behavior.df %>%
   group_by(condition) %>%
   summarize(correct = sum(Check == TRUE)/n(),
@@ -42,9 +42,9 @@ behCond.plot <- behavior.df %>%
   scale_x_discrete(labels = c('DN','NC','Control'))
 behCond.plot
 behCond.plot %>%
-  ggsave(plot=.,"figures/Figure_3.tiff",width=plot.w/2,height=plot.h,units="cm")
+  ggsave(plot=.,"figures/Figure_3.tiff",width=plot.w/2,height=plot.h,units="cm",dpi=300)
 
-# Figure S1: Behavior by interpretation
+## Figure S1: Behavior by interpretation ####
 behInterp.tbl <- behavior.df %>%
   filter(check_mm != 0) %>%
   group_by(subject,check_mm) %>%
@@ -81,6 +81,30 @@ behPlots
 behPlots %>%
   ggsave(plot=.,"figures/Figure_S1.tiff",width=plot.w,height=plot.h,units="cm")
 
+## Figure S2: By-participant interpretation behavior ####
+bySubjectDelim.plot <- behInterp.tbl %>%
+  group_by(subject,cond2) %>%
+  summarize(count_interp = sum(interpretation)) %>%
+  filter(cond2=='nc') %>%
+  arrange(-count_interp) %>%
+  mutate(subject = factor(subject,levels=.$subject)) %>%
+  select(-cond2) %>%
+  merge(behInterp.tbl) %>%
+  mutate(check_mm = factor(check_mm,levels=c('nc','dn_mm','nc_mm','dn'))) %>%
+  arrange(count_interp) %>%
+  ggplot(aes(x=subject,y=interpretation,fill=check_mm)) +
+  geom_bar(stat='identity') +
+  scale_fill_manual(values=c(dn_color,nc_mm_color,dn_mm_color,nc_color),
+                    labels=c('DN congruent','NC incongruent','DN incongruent','NC congruent')) +
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank()) +
+  labs(x='Participant',y='Proportion DN/NC',fill='Response type') +
+  geom_vline(xintercept = c(1.5,21.5))
+bySubjectDelim.plot
+bySubjectDelim.plot %>%
+  ggsave(plot=.,"figures/Figure_S2.tiff",width=plot.w,height=plot.h,units="cm",dpi=300)
+  
 
 ## Figure 5: Prosodic contours in critical conditions ####
 
@@ -105,7 +129,7 @@ critContours.plot <- ggplot() +
   annotate(geom="text", x=55, y=annY, label="PP1",color="black")
 critContours.plot
 critContours.plot %>%
-  ggsave(plot=.,"figures/Figure_5.tiff",width=plot.w,height=plot.h,units="cm")
+  ggsave(plot=.,"figures/Figure_5.tiff",width=plot.w,height=plot.h,units="cm",dpi=300)
 
 ## Figure 7: Prosodic contour for last 2 syllables ####
 
@@ -127,7 +151,7 @@ last2.plot <- last2.df %>%
   annotate(geom="text", x=-5, y=150, label="ultimate",color="black")
 last2.plot
 last2.plot %>%
-  ggsave(plot=.,'figures/Figure_7.tiff',width=.5*plot.w,height=plot.h,units="cm")
+  ggsave(plot=.,'figures/Figure_7.tiff',width=.5*plot.w,height=plot.h,units="cm",dpi=300)
 
 ## Figure 8: Duration boxplot ####
 durNCI.plot <- syll_vals.df %>%
@@ -146,7 +170,7 @@ durNCI.plot <- syll_vals.df %>%
   theme(legend.position = "top")
 durNCI.plot
 durNCI.plot %>%
-  ggsave(plot=.,'figures/Figure_8.tiff',width=plot.w/2,height=plot.h,units="cm")
+  ggsave(plot=.,'figures/Figure_8.tiff',width=plot.w/2,height=plot.h,units="cm",dpi=300)
 
 ## Figure 9: Contours by condition on NCIs ####
 
@@ -221,12 +245,15 @@ compContours <- ggarrange(subNO.plot,subNS.plot,objNO.plot,objNS.plot,
           ncol = 2, nrow = 2)
 compContours
 compContours %>%
-  ggsave(plot=.,'figures/Figure_9.tiff',width=1.5*plot.w,height=1.5*plot.h,units="cm")
+  ggsave(plot=.,'figures/Figure_9.tiff',width=1.5*plot.w,height=1.5*plot.h,units="cm",dpi=300)
 
 ## Supplementary figure S4: Illustration of peak timing in critical conditions ####
 # x-intercept values output by sonne.peak.lmer and rien.peak.lmer
-critContours.plot +
+peakTime.plot <- critContours.plot +
   geom_vline(xintercept=14.2768,color=nc_color,size=1) +
   geom_vline(xintercept=14.6182,color=dn_color,size=1) +
   geom_vline(xintercept=46.4805,color=nc_color,size=1) +
   geom_vline(xintercept=47.3125,color=dn_color,size=1)
+peakTime.plot
+peakTime.plot %>%
+  ggsave(plot=.,"figures/Figure_S4.tiff",width=plot.w,height=plot.h,units="cm",dpi=300)
