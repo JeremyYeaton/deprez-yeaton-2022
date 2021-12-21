@@ -6,6 +6,7 @@ Any questions regarding the data or analysis can be directed to: jyeaton@uci.edu
 
 ## Data
 To comply with GDPR, the raw data are hosted on OSF: https://osf.io/u35mq/
+
 All "raw" (i.e.: not z-transformed) F0 values are in Hz.
 This OSF repository also stores a R environment file which contains all of the models and figures.
 
