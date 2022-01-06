@@ -53,7 +53,7 @@ This repository contains 3 R scripts in the "scripts" directory:
 - f0_Z: demeaned_f0 divided by the standard deviation for that participant within the same syllable position across all utterances
 - normTime: 10 time-normalized values per syllable using pythonic numbering (0-9 is the first syllable, 10-19 is the second, etc.)
 
-### Columns -- _syll_vals.df dataframe
+### Columns -- _syll_vals.df_ dataframe
 - subj: same as above
 - syll_num: same as above
 - unique: same as above
