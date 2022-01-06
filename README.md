@@ -1,6 +1,6 @@
 # README
 This repository contains the data processing and analysis scripts for:
-Déprez, V. & Yeaton, J.D. (2022). _On the prosody of French ambiguous multiple negative sentences._ [[manuscript]](https://jeremyyeaton.github.io/papers/Deprez_Yeaton-2021-manuscript-ProsodyNegation_revised.pdf)
+Déprez, V. & Yeaton, J.D. (2022). _On the prosody of French ambiguous multiple negative sentences._ Glossa: a journal of general linguistics. [[full text]](https://www.glossa-journal.org/article/id/5756/)
 
 Any questions regarding the data or analysis can be directed to: jyeaton@uci.edu
 
